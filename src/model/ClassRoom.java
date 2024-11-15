@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class ClassRoom {
     private String name;
     private int numberStudent;
-    private ArrayList<ClassRoom> arrClassRoom = new ArrayList<>();
 
     public void setName(String name ){
         this.name = name;
@@ -19,13 +18,5 @@ public class ClassRoom {
     }
     public int getNumberStudent(){
         return numberStudent;
-    }
-
-    public ArrayList<ClassRoom> getArrClassRoom() {
-        return arrClassRoom;
-    }
-
-    public void setArrClassRoom(ArrayList<ClassRoom> arrClassRoom) {
-        this.arrClassRoom = arrClassRoom;
     }
 }

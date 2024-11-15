@@ -4,23 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27814b5a-6d14-4e18-9a36-feb6c9707434" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asm1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/ClassRoomController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/StudentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lecture/IntTreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lecture/lab4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/ClassRoom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/ClassRoomView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/StudentView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="27814b5a-6d14-4e18-9a36-feb6c9707434" name="Changes" comment="final">
+      <change afterPath="$PROJECT_DIR$/src/model/DataStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ClassRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ClassRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ClassRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ClassRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ClassRoomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ClassRoomView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/StudentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/StudentView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -51,6 +45,16 @@
     &quot;assignee&quot;: &quot;DTD2604&quot;
   }
 }</component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="temp" />
+        <option name="rewordedMessage" value="final" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="060cdfcb099c592e6ea9fca10b1a239a761b669b" />
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/DTD2604/asm-DTAG.git&quot;,
@@ -75,6 +79,7 @@
     "Application.Main.executor": "Debug",
     "Application.lab4.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -126,6 +131,11 @@
       <workItem from="1728204285504" duration="2707000" />
       <workItem from="1728264082989" duration="18725000" />
       <workItem from="1728284414582" duration="89000" />
+      <workItem from="1728293886718" duration="344000" />
+      <workItem from="1728539647366" duration="4046000" />
+      <workItem from="1728614603257" duration="6000" />
+      <workItem from="1728960183704" duration="171000" />
+      <workItem from="1731651335101" duration="9640000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -135,18 +145,61 @@
       <option name="project" value="LOCAL" />
       <updated>1728293826673</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="final">
+      <option name="closed" value="true" />
+      <created>1728293906635</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1728293906635</updated>
+    </task>
+    <task id="LOCAL-00003" summary="final">
+      <option name="closed" value="true" />
+      <created>1728293943815</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1728293943815</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -154,6 +207,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="final" />
+    <option name="LAST_COMMIT_MESSAGE" value="final" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/controller/StudentController.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/controller/StudentController.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

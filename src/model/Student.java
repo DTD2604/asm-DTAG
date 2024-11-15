@@ -10,16 +10,6 @@ public class Student {
     private ClassRoom classRoom;
     private double marks;
 
-    private ArrayList<Student> arrStudent = new ArrayList<>();
-
-    public ArrayList<Student> getArrStudent() {
-        return arrStudent;
-    }
-
-    public void setArrStudent(ArrayList<Student> arrStudent) {
-        this.arrStudent = arrStudent;
-    }
-
     public int getId() {
         return id;
     }

@@ -1,12 +1,12 @@
 package controller;
 
 import model.ClassRoom;
+import model.DataStorage;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class ClassRoomController {
-    private static final ClassRoom classRooms = new ClassRoom();
     private static String Name;
 
     public void createClassRoom(String name, int number) {
@@ -17,18 +17,18 @@ public class ClassRoomController {
         classRoom.setNumberStudent(number);
 
         newClassRoom.add(classRoom);
-        classRooms.setArrClassRoom(newClassRoom);
+        DataStorage.getInstance().setDataClassRoom(newClassRoom);
         Name = name;
     }
 
     public ArrayList<ClassRoom> getAllClass() {
-        return classRooms.getArrClassRoom();
+        return DataStorage.getInstance().getDataClassRoom();
     }
 
-    public static ClassRoom getClassRoomByName(){
+    public static ClassRoom getClassRoomByName() {
         ClassRoom classRoom = new ClassRoom();
-        for(var room : classRooms.getArrClassRoom()){
-            if(Objects.equals(room.getNameClass(), Name)){
+        for (var room : DataStorage.getInstance().getDataClassRoom()) {
+            if (Objects.equals(room.getNameClass(), Name)) {
                 classRoom = room;
                 break;
             }

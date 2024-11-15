@@ -1,15 +1,12 @@
 package view;
 
 import controller.StudentController;
-import model.Student;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StudentView {
     private static int id = 0;
-    private static final Student arrStudent = new Student();
-    private static final ArrayList<Student> array = new ArrayList<>();
     private static final StudentController studentController = new StudentController();
 
     public static void createStudent() {
@@ -24,8 +21,7 @@ public class StudentView {
 
         if (!name.isEmpty() && mark != 0) {
             id++;
-            array.add(studentController.addStudent(id, name, mark));
-            System.out.println("success!!");
+            studentController.addStudent(id, name, mark);
         } else {
             System.out.println("You haven't entered the name or mark or id yet.");
             createStudent();
@@ -34,22 +30,28 @@ public class StudentView {
 
     public static void updateStudent() {
         Scanner sc = new Scanner(System.in);
+        int id = 0;
+        String name = "";
+        double mark = 0;
+        try {
+            System.out.print("id: ");
+            id = sc.nextInt();
+            sc.nextLine();
 
-        System.out.print("id: ");
-        int id = sc.nextInt();
-        sc.nextLine();
+            System.out.println("data needs to be changed");
 
-        System.out.println("data needs to be changed");
+            System.out.print("name: ");
+            name = sc.nextLine();
 
-        System.out.print("name: ");
-        String name = sc.nextLine();
-
-        System.out.print("mark: ");
-        double mark = sc.nextDouble();
-        sc.nextLine();
+            System.out.print("mark: ");
+            mark = sc.nextDouble();
+            sc.nextLine();
+        } catch (Throwable ignored) {
+            System.out.println("error Data type");
+        }
 
         if (id != 0) {
-            arrStudent.setArrStudent(studentController.updateStudent(id, name, mark, arrStudent));
+            studentController.updateStudent(id, name, mark);
             System.out.println("success!!");
         } else {
             System.out.println("You haven't entered the id yet.");
@@ -59,9 +61,7 @@ public class StudentView {
 
     public static void viewStudent() {
         System.out.println("view information of all students in the class");
-
-        ArrayList<String> infoStudents = studentController.getAllStudent(arrStudent);
-        print(infoStudents);
+        print(studentController.getAllStudent());
     }
 
     public static void searchNameStudent() {
@@ -71,17 +71,17 @@ public class StudentView {
         System.out.println("Who are you looking for?");
         String str = sc.nextLine();
 
-        if (!str.isEmpty()) {
-            infoStudents = studentController.getAllStudent(arrStudent);
+        if (str.isEmpty()) {
+            infoStudents = studentController.getAllStudent();
         } else {
-            infoStudents = studentController.search(str, arrStudent);
+            infoStudents = studentController.search(str);
         }
 
         print(infoStudents);
     }
 
     public static void sortByMarks() {
-        ArrayList<String> infoStudents = studentController.sort(arrStudent);
+        ArrayList<String> infoStudents = studentController.sort();
 
         System.out.println("arrange the student list by marks");
 
@@ -109,39 +109,53 @@ public class StudentView {
             System.out.println("* (5). Sort by Student's mark   *");
             System.out.println("*********************************");
             System.out.println("What do you want ?");
-            int choice = sc.nextInt();
-            sc.nextLine();
+            try {
+                int choice = sc.nextInt();
+                sc.nextLine();
 
-            switch (choice) {
-                case 1:
-                    createStudent();
-                    arrStudent.setArrStudent(array);
-                    break;
-                case 2:
-                    viewStudent();
-                    updateStudent();
-                    break;
-                case 3:
-                    viewStudent();
-                    break;
-                case 4:
-                    searchNameStudent();
-                    break;
-                case 5:
-                    sortByMarks();
-                    break;
-                default:
-                    System.out.println("There is no option");
-                    choice();
-                    break;
+                switch (choice) {
+                    case 1:
+                        createStudent();
+                        break;
+                    case 2:
+                        viewStudent();
+                        updateStudent();
+                        break;
+                    case 3:
+                        viewStudent();
+                        break;
+                    case 4:
+                        searchNameStudent();
+                        break;
+                    case 5:
+                        sortByMarks();
+                        break;
+                    default:
+                        System.out.println("There is no option");
+                        choice();
+                        break;
+                }
+            } catch (Throwable ignored) {
+                System.out.println("error Data Type");
             }
-            System.out.println("Do you want to end the program? (yes/no)");
-            String choiceEnd = sc.nextLine();
 
-            if (choiceEnd.equals("yes")) {
-                check = false;
-            }
+            checkansware(check);
+
         }
         sc.close();
+    }
+
+    public static void checkansware(boolean check) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Do you want to end the program? (yes/no)");
+        String choiceEnd = sc.nextLine();
+
+        if (choiceEnd.equals("yes")) {
+            check = false;
+        } else if (!choiceEnd.equals("no")) {
+            System.out.println("the answer is invalid");
+            checkansware(check);
+        }
     }
 }

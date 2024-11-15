@@ -1,51 +1,47 @@
 package controller;
 
+import model.DataStorage;
 import model.Student;
 
 import java.util.*;
 
 public class StudentController {
 
-    public Student addStudent(int id, String fullName, double marks) {
+    public void addStudent(int id, String fullName, double marks) {
         Student student = new Student();
 
         var classRoom = ClassRoomController.getClassRoomByName();
-        student.setId(id);
-        student.setFullName(fullName);
-        student.setMarks(marks);
-        student.setClassRoom(classRoom);
+        if (classRoom.getNumberStudent() != (long) DataStorage.getInstance().getDataStudent().size()) {
+            try {
+                student.setId(id);
+                student.setFullName(fullName);
+                student.setMarks(marks);
+                student.setClassRoom(classRoom);
 
-        return student;
-    }
-
-    public ArrayList<Student> updateStudent(int id, String fullName, double marks, Student student) {
-        for (var member : student.getArrStudent()) {
-            if (searchId(id, member)) {
-                if (!fullName.isEmpty()) {
-                    member.setFullName(fullName);
-                } else {
-                    System.out.println("You haven't entered the name yet");
-                }
-
-                if (marks != 0) {
-                    member.setMarks(marks);
-                } else {
-                    System.out.println("You haven't entered the mark yet");
-                }
+                DataStorage.getInstance().setObjStudent(student);
+                System.out.println("success!!");
+            } catch (Throwable ignored) {
+                System.out.println("cannot add student in the class");
             }
+
+        } else {
+            System.out.println("The number of students in the class " +
+                    classRoom.getNameClass() + "is full.");
         }
-        return student.getArrStudent();
     }
 
-    public ArrayList<String> getAllStudent(Student student) {
-        return getStudent(student);
+    public void updateStudent(int id, String fullName, double marks) {
+        DataStorage.getInstance().setDataStudent(update(id, fullName, marks));
     }
 
-    public ArrayList<String> sort(Student student) {
+    public ArrayList<String> getAllStudent() {
+        return getStudent(DataStorage.getInstance().getDataStudent());
+    }
+
+    public ArrayList<String> sort() {
         int minIndex;
-        int total = student.getArrStudent().size();
-        ArrayList<Student> newArrStudent = new ArrayList<>(student.getArrStudent());
-        Student newSort = new Student();
+        int total = DataStorage.getInstance().getDataStudent().size();
+        ArrayList<Student> newArrStudent = new ArrayList<>(DataStorage.getInstance().getDataStudent());
 
         for (int i = 0; i < total - 1; i++) {
             minIndex = i;
@@ -60,28 +56,25 @@ public class StudentController {
             newArrStudent.set(minIndex, newArrStudent.get(i));
             newArrStudent.set(i, temp);
         }
-        newSort.setArrStudent(newArrStudent);
 
-        return getStudent(newSort);
+        return getStudent(newArrStudent);
     }
 
-    public ArrayList<String> search(String str, Student student) {
+    public ArrayList<String> search(String str) {
         ArrayList<Student> searchName = new ArrayList<>();
-        Student student1 = new Student();
 
-        for (var member : student.getArrStudent()) {
+        for (var member : DataStorage.getInstance().getDataStudent()) {
             if (member.getName().equals(str)) {
                 searchName.add(member);
             }
         }
-        student1.setArrStudent(searchName);
 
-        return getStudent(student1);
+        return getStudent(searchName);
     }
 
-    private ArrayList<String> getStudent(Student student) {
+    private ArrayList<String> getStudent(ArrayList<Student> students) {
         ArrayList<String> allStudent = new ArrayList<>();
-        for (Student student1 : student.getArrStudent()) {
+        for (Student student1 : students) {
             String member = "ID: " + student1.getId() +
                     ", Name: " + student1.getName() +
                     ", Class: " + student1.getClassRoom() +
@@ -90,6 +83,22 @@ public class StudentController {
             allStudent.add(member);
         }
         return allStudent;
+    }
+
+    private ArrayList<Student> update(int id, String fullName, double marks) {
+        ArrayList<Student> student = DataStorage.getInstance().getDataStudent();
+        for (var member : student) {
+            if (searchId(id, member)) {
+                if (!fullName.isEmpty()) {
+                    member.setFullName(fullName);
+                }
+
+                if (marks != 0) {
+                    member.setMarks(marks);
+                }
+            }
+        }
+        return student;
     }
 
     private boolean searchId(int id, Student student) {
