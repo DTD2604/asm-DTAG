@@ -1,7 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-
 public class ClassRoom {
     private String name;
     private int numberStudent;

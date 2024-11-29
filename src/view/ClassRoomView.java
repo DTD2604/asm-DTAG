@@ -30,7 +30,7 @@ public class ClassRoomView {
                 System.out.println("success!");
             }else{
 
-                System.out.println("lớp không có học sinh");
+                System.out.println("class don't have student");
                 System.out.println("Do you want to end the program? (yes/no)");
                 String choiceEnd = sc.nextLine();
 

@@ -1,9 +1,5 @@
 package model;
 
-import controller.ClassRoomController;
-
-import java.util.ArrayList;
-
 public class Student {
     private int id;
     private String fullName;

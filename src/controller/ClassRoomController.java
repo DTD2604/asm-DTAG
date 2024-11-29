@@ -9,6 +9,7 @@ import java.util.Objects;
 public class ClassRoomController {
     private static String Name;
 
+
     public void createClassRoom(String name, int number) {
         ClassRoom classRoom = new ClassRoom();
         ArrayList<ClassRoom> newClassRoom = new ArrayList<>();
